@@ -1,0 +1,27 @@
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(content="" name="description")
+    meta(content="" name="keywords")
+    title #{title}
+    link(rel="apple-touch-icon" href="images/apple-touch-icon.png")
+    link(rel="shortcut icon" href="images/apple-touch-icon.png" type="image/x-icon")
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+
+
+  body(style="opacity: 0")
+    .wrapper
+      include includes/header.pug
+      if(breadrumbs == 1)
+        include includes/breadrumbs.pug
+      main.content
+        block content
+        if(botPage == 1)
+          include includes/form.pug
+      include includes/footer.pug

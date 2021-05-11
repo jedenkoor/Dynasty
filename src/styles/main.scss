@@ -1,0 +1,238 @@
+@import '~normalize.css';
+@import 'variables/mixins';
+@import 'variables/colors';
+@import 'variables/indents';
+@import 'variables/fonts';
+
+:root {
+  --scheme: light;
+  --primary-button: $light-primary-button;
+  --grad: $light-grad;
+  --tertiary-accent: $light-tertiary-accent;
+  --error: $light-error;
+  --sunset-icon: $light-sunset-icon;
+  --sunset-card: $light-sunset-card;
+  --surface: $light-surface;
+  --card-surface: $light-card-surface;
+  --on-card-surface: $light-on-card-surface;
+  --shadow: $light-shadow;
+}
+
+.dark-theme {
+  --scheme: dark;
+  --primary-button: $dark-primary-button;
+  --grad: $dark-grad;
+  --tertiary-accent: $dark-tertiary-accent;
+  --error: $dark-error;
+  --sunset-icon: $dark-sunset-icon;
+  --sunset-card: $dark-sunset-card;
+  --surface: $dark-surface;
+  --card-surface: $dark-card-surface;
+  --on-card-surface: $dark-on-card-surface;
+  --shadow: $dark-shadow;
+}
+
+// ::selection {
+//   background-color: rgba(36, 105, 233, 0.99);
+//   color: #fff;
+// }
+
+@media screen and (min-width: 1200px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  // ::-webkit-scrollbar-button {
+  //   display: none;
+  // }
+  // ::-webkit-scrollbar-thumb {
+  //   background: $primary-color;
+  //   border-radius: 2px;
+  // }
+  // ::-webkit-scrollbar-track {
+  //   background: $neutral-color-10;
+  // }
+}
+
+html.fixed {
+  overflow: hidden;
+  body {
+    overflow: hidden;
+  }
+}
+
+html.compensate-for-scrollbar {
+  margin-right: 4px;
+  @-moz-document url-prefix() {
+    margin-right: 17px;
+  }
+  .header {
+    padding-right: 4px;
+    @-moz-document url-prefix() {
+      padding-right: 17px;
+    }
+  }
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  // color: var(--surface);
+  background-color: var(--surface);
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  transition: opacity 0.2s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  @include w1023 {
+    font-size: 13px;
+    line-height: 17px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: $padding-container;
+  @include w767 {
+    padding: $mobile-padding-container;
+  }
+}
+
+.margin-section {
+  margin-bottom: $margin-section;
+  @include w1023 {
+    margin-bottom: $tablet-margin-section;
+  }
+  @include w767 {
+    margin-bottom: $mobile-margin-section;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+ul,
+ol {
+  margin: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+b {
+  font-weight: bold;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea,
+button,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.btn-primary {
+  border: none;
+  border-radius: 4px;
+  // color: $neutral-color-10;
+  background: var(--primary-button);
+  text-align: center;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+}
+
+.h1title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'Noto Serif', serif;
+  font-weight: normal;
+  font-size: 61px;
+  line-height: 64px;
+  @include w1023 {
+    font-size: 51px;
+    line-height: 56px;
+  }
+  @include w767 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+.h2title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'Noto Serif', serif;
+  font-weight: normal;
+  font-size: 51px;
+  line-height: 56px;
+  @include w1023 {
+    font-size: 42px;
+    line-height: 48px;
+  }
+  @include w767 {
+    margin-bottom: 20px;
+    font-size: 29px;
+    line-height: 32px;
+  }
+}
+
+@import 'blocks/common/header';
+@import 'blocks/common/breadcrumbs';
+@import 'blocks/common/footer';
+@import 'blocks/common/popup';
+@import 'blocks/otherpages/services';
+@import 'blocks/otherpages/text';
+@import 'blocks/otherpages/404';

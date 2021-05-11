@@ -1,0 +1,40 @@
+@mixin more-fullhd {
+  @media screen and (min-width: 1921px) {
+    @content;
+  }
+}
+@mixin hover {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin w1440 {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+@mixin w1366 {
+  @media screen and (max-width: 1366px) {
+    @content;
+  }
+}
+@mixin w1200 {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin w1023 {
+  @media screen and (max-width: 1023px) {
+    @content;
+  }
+}
+@mixin w767 {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin w359 {
+  @media screen and (max-width: 359px) {
+    @content;
+  }
+}

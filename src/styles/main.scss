@@ -6,30 +6,30 @@
 
 :root {
   --scheme: light;
-  --primary-button: $light-primary-button;
-  --grad: $light-grad;
-  --tertiary-accent: $light-tertiary-accent;
-  --error: $light-error;
-  --sunset-icon: $light-sunset-icon;
-  --sunset-card: $light-sunset-card;
-  --surface: $light-surface;
-  --card-surface: $light-card-surface;
-  --on-card-surface: $light-on-card-surface;
-  --shadow: $light-shadow;
+  --primary-button: #{$light-primary-button};
+  --grad: #{$light-grad};
+  --tertiary-accent: #{$light-tertiary-accent};
+  --error: #{$light-error};
+  --sunset-icon: #{$light-sunset-icon};
+  --sunset-card: #{$light-sunset-card};
+  --surface: #{$light-surface};
+  --card-surface: #{$light-card-surface};
+  --on-card-surface: #{$light-on-card-surface};
+  --shadow: #{$light-shadow};
 }
 
 .dark-theme {
   --scheme: dark;
-  --primary-button: $dark-primary-button;
-  --grad: $dark-grad;
-  --tertiary-accent: $dark-tertiary-accent;
-  --error: $dark-error;
-  --sunset-icon: $dark-sunset-icon;
-  --sunset-card: $dark-sunset-card;
-  --surface: $dark-surface;
-  --card-surface: $dark-card-surface;
-  --on-card-surface: $dark-on-card-surface;
-  --shadow: $dark-shadow;
+  --primary-button: #{$dark-primary-button};
+  --grad: #{$dark-grad};
+  --tertiary-accent: #{$dark-tertiary-accent};
+  --error: #{$dark-error};
+  --sunset-icon: #{$dark-sunset-icon};
+  --sunset-card: #{$dark-sunset-card};
+  --surface: #{$dark-surface};
+  --card-surface: #{$dark-card-surface};
+  --on-card-surface: #{$dark-on-card-surface};
+  --shadow: #{$dark-shadow};
 }
 
 // ::selection {

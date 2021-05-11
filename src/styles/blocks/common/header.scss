@@ -1,0 +1,21 @@
+.header {
+  &__logo {
+    display: flex;
+    svg {
+      width: 100%;
+      height: auto;
+    }
+    path {
+      fill: var(--primary-button);
+      &.logo-grad {
+        fill: url(#light-grad);
+      }
+    }
+  }
+}
+
+.dark-theme {
+  path.logo-grad {
+    fill: url(#dark-grad);
+  }
+}

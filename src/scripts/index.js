@@ -1,8 +1,6 @@
 import Swiper from 'swiper/swiper-bundle.js'
 import 'swiper/swiper-bundle.css'
 import IMask from 'imask'
-import noUiSlider from 'noUiSlider/distribute/nouislider.min.js'
-import 'noUiSlider/distribute/nouislider.min.css'
 
 import ScrollMagic from 'scrollmagic'
 import { gsap, TweenMax } from 'gsap'
@@ -26,8 +24,6 @@ class Init {
     this.events()
 
     this.actions().initPhoneMask()
-
-    this.actions().initCatalogRangeSlider()
 
     setTimeout(() => {
       this.actions().showBody()
@@ -312,47 +308,6 @@ class Init {
         const selectOpen = el.closest('.select').querySelector('.select-open')
         _this.actions().toggleSelect(selectOpen)
         el.closest('.select').querySelector('.select-open span').innerText = el.value
-      },
-      initCatalogRangeSlider() {
-        const portfolioSliders = document.querySelectorAll('.portfolio-slider')
-        if (portfolioSliders.length) {
-          portfolioSliders.forEach((item) => {
-            const min = +item.getAttribute('data-min')
-            const max = +item.getAttribute('data-max')
-            const step = +item.getAttribute('data-step')
-            const minInput = item.previousElementSibling.querySelector('.portfolio-slider-from')
-            const maxInput = item.previousElementSibling.querySelector('.portfolio-slider-to')
-            noUiSlider.create(item, {
-              start: [min, max],
-              step: step,
-              connect: true,
-              range: {
-                min: [min],
-                max: [max]
-              },
-              format: {
-                to: function (value) {
-                  return Math.round(value)
-                },
-                from: function (value) {
-                  return value
-                }
-              }
-            })
-
-            item.noUiSlider.on('slide', function (values, handle) {
-              ;(handle ? maxInput : minInput).value = values[handle]
-            })
-
-            minInput.addEventListener('change', function () {
-              item.noUiSlider.set([this.value.replace(/\s/g, ''), null])
-            })
-
-            maxInput.addEventListener('change', function () {
-              item.noUiSlider.set([null, this.value.replace(/\s/g, '')])
-            })
-          })
-        }
       },
       initCaseSlider(el) {
         const prevArr = el.querySelector('.swiper-button-prev')

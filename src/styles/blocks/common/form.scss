@@ -1,0 +1,119 @@
+.form {
+  &__title {
+    margin-bottom: 48px;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 20px));
+    grid-gap: 40px;
+    background-color: var(--card-surface);
+    box-shadow: 1px 10px 48px rgba(20, 25, 31, 0.08);
+    border-radius: 8px;
+  }
+  &__col {
+    &:first-child {
+      padding: 40px 73px 40px 64px;
+    }
+  }
+  &__subtitle {
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-family: 'Noto Serif';
+    font-weight: normal;
+    font-size: 29px;
+    line-height: 32px;
+  }
+  &__bot {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+  }
+  &__btn {
+    flex-shrink: 0;
+    margin-right: 16px;
+    padding: 12px 32px;
+  }
+  &__text {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    a {
+      color: var(--link);
+      &:hover,
+      &:focus {
+        color: var(--link-on-hover);
+      }
+    }
+  }
+  &__map {
+    width: 100%;
+    height: 428px;
+    margin-bottom: 24px;
+    .ymaps-2-1-78-copyrights-pane,
+    .ymaps-2-1-78-controls__toolbar,
+    .ymaps-2-1-78-controls__bottom {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      clip: rect(0 0 0 0);
+    }
+    .ymaps-2-1-78-events-pane:before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(61, 74, 92, 0.54), rgba(61, 74, 92, 0.54));
+    }
+    [class*='ymaps-2'][class*='-ground-pane'] {
+      -webkit-filter: grayscale(1) brightness(1.1) invert(100%) contrast(0.7);
+      filter: grayscale(1) brightness(1) invert(100%) contrast(1.1);
+    }
+  }
+  &__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  &-contacts {
+    &__item {
+      margin-bottom: 16px;
+      &:not(:last-child) {
+        margin-right: 64px;
+      }
+    }
+    &__link {
+      display: flex;
+      align-items: center;
+      &:is(a) {
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+      svg {
+        margin-right: 12px;
+      }
+      path {
+        stroke: var(--secondary-accent);
+      }
+    }
+  }
+}
+
+.light-theme {
+  .ymaps-2-1-78-events-pane:before {
+    display: none;
+  }
+  [class*='ymaps-2'][class*='-ground-pane'] {
+    filter: none;
+  }
+}

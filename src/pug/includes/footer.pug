@@ -1,6 +1,18 @@
 footer.footer 
   .container.footer__container
-    a.footer__logo(href="/") 
-      <svg xmlns="http://www.w3.org/2000/svg">
-        <use xlink:href="/images/logo.svg"></use>
+    a.header__logo(href="/") 
+      <svg class="logo-grad" width="28" height="40">
+        <use xlink:href="#logo-grad"></use>
       </svg>
+      <svg class="logo-fill" width="101" height="40">
+        <use xlink:href="#logo-fill"></use>
+      </svg>
+    nav.footer__menu 
+      ul.footer__list.footer-list
+        li.footer-list__item 
+          a.footer-list__link(href="#") Услуги
+        li.footer-list__item 
+          a.footer-list__link(href="#") Контакты
+        li.footer-list__item 
+          a.footer-list__link(href="#") Политика конфиденциальности
+    p.footer__copy Династия © 2021. Все права защищены

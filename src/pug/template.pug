@@ -9,19 +9,27 @@ html(lang="ru")
     meta(content="" name="description")
     meta(content="" name="keywords")
     title #{title}
-    link(rel="apple-touch-icon" href="images/apple-touch-icon.png")
-    link(rel="shortcut icon" href="images/apple-touch-icon.png" type="image/x-icon")
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#f1c37e">
+    <meta name="msapplication-TileColor" content="#29313d">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
 
 
   body(style="opacity: 0")
     .wrapper
+      include includes/sprite-svg.pug
       include includes/header.pug
       if(breadrumbs == 1)
         include includes/breadrumbs.pug
       main.content
         block content
-        if(botPage == 1)
+        if(form == 1)
           include includes/form.pug
       include includes/footer.pug

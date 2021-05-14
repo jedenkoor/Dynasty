@@ -1,11 +1,35 @@
+$light-selection-color: rgba(254, 189, 93, 0.99);
+$dark-selection-color: rgba(241, 195, 126, 0.99);
+
+$light-img-selection-color: rgba(254, 189, 93, 0.5);
+$dark-img-selection-color: rgba(241, 195, 126, 0.5);
+
 $light-primary-button: #febd5d;
 $dark-primary-button: #f1c37e;
+
+$light-primary-hover: #fed18f;
+$dark-primary-hover: #f6d8ac;
+
+$light-primary-focus: rgba(254, 168, 42, 0.25);
+$dark-primary-focus: rgba(254, 168, 42, 0.25);
 
 $light-grad: linear-gradient(180deg, #fec776 0%, #feb343 100%);
 $dark-grad: linear-gradient(191.37deg, #ffa929 -5.82%, #fec776 27.36%, #fdd497 48.12%, #f5b455 67.61%, #ffaf3a 103.83%);
 
-$light-tertiary-accent: #45876d;
-$dark-tertiary-accent: #7bccb9;
+$light-logo-hover: #fea82a;
+$dark-logo-hover: #f6d8ac;
+
+$light-secondary-accent: #45876d;
+$dark-secondary-accent: #69d1b9;
+
+$light-link: #0149b3;
+$dark-link: #4196fa;
+
+$light-link-on-hover: #015de4;
+$dark-link-on-hover: #74b2fb;
+
+$light-success: #00be64;
+$dark-success: #24b36f;
 
 $light-error: #fe442a;
 $dark-error: #fe705d;
@@ -16,23 +40,65 @@ $dark-sunset-icon: linear-gradient(180deg, #b3aeea 0%, #add0eb 100%);
 $light-sunset-card: linear-gradient(180deg, #7872c0 0%, #5ca1d6 100%);
 $dark-sunset-card: linear-gradient(180deg, #6962c6 0%, #458dc4 100%);
 
+$light-border: #eef2fa;
+$dark-border: #2f3b4a;
+
 $light-surface: #f9fafb;
 $dark-surface: #29313d;
 
+$light-header-surface: #ffffff;
+$dark-header-surface: #29313d;
+
 $light-card-surface: #ffffff;
-$dark-card-surface: linear-gradient(0deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)), #29313d;
+$dark-card-surface: #3a414c;
 
 $light-on-card-surface: #f9fafb;
 $dark-on-card-surface: linear-gradient(0deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.16)), #29313d;
 
+$light-on-sunset-card: #f9fafb;
+$dark-on-sunset-card: #f9fafb;
+
 $light-shadow: #14191f;
 $dark-shadow: #23272f;
 
-$color-text-2: #e0e5eb;
-$color-text-3: #c2cad6;
-$color-text-4: #a3b0c2;
-$color-text-5: #8595ad;
-$color-text-6: #667b99;
-$color-text-7: #52627a;
-$color-text-8: #3d4a5c;
-$color-text-9: #29313d;
+$light-cookies-bg: rgba(255, 255, 255, 0.87);
+$dark-cookies-bg: rgba(49, 55, 64, 0.87);
+
+$light-linear-bg: linear-gradient(56.22deg, rgba(14, 47, 96, 0.4717) 13.59%, rgba(89, 108, 136, 0) 99.98%);
+$dark-linear-bg: linear-gradient(56.22deg, rgba(14, 47, 96, 0.801) 13.59%, rgba(89, 108, 136, 0) 99.98%);
+
+$light-radial-bg: radial-gradient(
+  100% 1071.07% at 0% 2.05%,
+  rgba(41, 49, 61, 0.9) 0%,
+  rgba(41, 49, 61, 0.415049) 51.29%,
+  rgba(41, 49, 61, 0) 100%
+);
+$dark-radial-bg: radial-gradient(
+  100% 1071.07% at 0% 2.05%,
+  rgba(20, 25, 31, 0.9) 0%,
+  rgba(41, 49, 61, 0.415049) 51.29%,
+  rgba(41, 49, 61, 0) 100%
+);
+
+$light-text-grey-surface-border: #c2cad6;
+$dark-text-grey-surface-border: #606975;
+
+$light-text-caption-on-grey-surface: #a3b0c2;
+$dark-text-caption-on-grey-surface: #949aa3;
+
+$light-text-secondary-buttons: #3d4a5c;
+$dark-text-secondary-buttons: #e0e5eb;
+
+$light-text-main-on-card-surface: #29313d;
+$dark-text-main-on-card-surface: #f9fafb;
+
+$light-menu-shadow: 1px 10px 48px rgba(20, 25, 31, 0.12);
+$dark-menu-shadow: 1px 10px 48px rgba(20, 25, 31, 0.3);
+
+$light-shadow-default-input: 1px 2px 3px rgba(20, 25, 31, 0.1), inset 3px 3px 8px rgba(20, 25, 31, 0.02);
+$dark-shadow-default-input: 1px 2px 3px rgba(35, 39, 47, 0.1), inset 3px 3px 8px rgba(35, 39, 47, 0.02);
+
+$light-shadow-active-input: 0px 2px 5px rgba(41, 49, 61, 0.17), inset 0px 2px 5px rgba(20, 25, 31, 0.22);
+$dark-shadow-active-input: 0px 2px 5px rgba(249, 250, 251, 0.17), inset 0px 2px 5px rgba(35, 39, 47, 0.22);
+
+$text-on-button: #29313d;

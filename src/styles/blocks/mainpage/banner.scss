@@ -1,0 +1,43 @@
+.banner {
+  position: relative;
+  height: 734px;
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--linear-bg);
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__container {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding-top: 157px;
+  }
+  &__text {
+    margin-bottom: 25px;
+    font-family: 'Noto Serif';
+    font-size: 24px;
+    line-height: 28px;
+    color: var(--on-sunset-card);
+  }
+  &__title {
+    max-width: 1000px;
+    margin-bottom: 47px;
+    color: var(--on-sunset-card);
+  }
+  &__btn {
+    padding: 12px 32px;
+  }
+}

@@ -1,0 +1,111 @@
+extends ../template
+
+block variables
+  - var title = 'Главная'
+  -var form = 1
+
+block content
+  section.banner(style="background-color: #296692;")
+    picture
+      source(type="image/webp" srcset="images/banner.jpg")
+      img.banner__img(src="images/banner.jpg" alt="Консьерж-сервис аренды транспорта, организации отдыха и деловых встреч")
+    .container.banner__container
+      p.banner__text Добро пожаловать в Сочи
+      h1.h1title.banner__title Консьерж-сервис аренды транспорта, организации отдыха и деловых встреч 
+      button.btn-primary.banner__btn Поехать в отпуск
+
+  section.about.margin-section
+    .container
+      ul.about__cards.about-cards
+        li.about-cards__item 
+          svg.about-cards__icon
+            use(xlink:href="#about-cards-icon1")
+          p.about-cards__text Профессиональные водители-гиды
+        li.about-cards__item 
+          svg.about-cards__icon
+            use(xlink:href="#about-cards-icon2")
+          p.about-cards__text Транспорт застрахован и обслужен
+        li.about-cards__item 
+          svg.about-cards__icon
+            use(xlink:href="#about-cards-icon3")
+          p.about-cards__text Организацию всех мероприятий берём на себя
+      h3.about__text Новая инфраструктура, большой выбор отелей, масштабные спортивные сооружения — всё, что нужно для качественного отдыха
+      ul.about__cols 
+        li.about__col
+          p Сочи — современная столица русского юга, главный город-курорт Краснодарского края. Здесь вы найдете не только отличную культурно-развлекательную программу, но и прекрасные возможности для проведения деловых встреч и конференций. Город-курорт Сочи и соседние курортные поселки — Мацеста, Красная Поляна, Дагомыс, Адлер, Хоста — входят в состав так называемого «Большого Сочи».
+        li.about__col
+          p Горнолыжные курорты Красная Поляна, Роза Хутор, Газпром и Горки Город предоставляют туристам великолепную возможность попробовать себя на олимпийских трассах и получить удовольствие от катания и отпуска с семьей или с большой компанией друзей. Здесь вы найдете более 100 км трасс разного уровня сложности, горнолыжные школы и прокат необходимого снаряжения.
+        li.about__col
+          p Курорты Абхазии подкупают не только безупречно чистым морем, напоенным хвойными и другими тропическими ароматами воздухом, но и бесконечным радушием местных жителей и их желанием поделиться самым лучшим с гостями. Здесь вы действительно будете чувствовать себя больше гостем, чем туристом, независимо от того, едете ли в горы, отдыхаете на пляже или приходите за покупками на местный рынок.
+
+  section.services.margin-section
+    .container
+      h2.h2title.services__title Наши услуги
+      ul.services__list 
+        li.services__item.services-item
+          picture
+            source(type="image/webp" srcset="images/service1.jpg")
+            img.services-item__img(src="images/service1.jpg" alt="Консьерж-сервис аренды транспорта, организации отдыха и деловых встреч")
+          .services-item__info 
+            h3.services-item__title Организация отдыха
+            ul.services-item__links.services-item-links
+              li.services-item-links__item
+                a.services-item-links__link.btn-secondary(href="#")  Индивидуальный
+              li.services-item-links__item
+                a.services-item-links__link.btn-secondary(href="#") Семейный
+              li.services-item-links__item
+                a.services-item-links__link.btn-secondary(href="#") Корпоративный
+            p.services-item__text Популяционный индекс пространственно решает перигелий, как это случилось в 1994 году с кометой Шумейкеpов-Леви 9. Небесная сфера перечеркивает реликтовый ледник. Аргумент перигелия оценивает спектральный класс. Угловое расстояние, сублимиpуя с повеpхности ядpа кометы, прекрасно решает астероидный эффективный диаметp.
+            a.btn-primary.services-item__btn(href="#")  Узнать подробнее
+        li.services__item.services-item
+          picture
+            source(type="image/webp" srcset="images/service2.jpg")
+            img.services-item__img(src="images/service2.jpg" alt="Казино выходного дня")
+          .services-item__info 
+            h3.services-item__title Казино выходного дня
+            p.services-item__text Поглощение огнеопасно разъедает аналитический интермедиат. Энергетический подуровень представляет собой фотоиндуцированный энергетический перенос, но иногда протекают со взрывом. Следуя химической логике, пластмасса отравляет пигмент. Катализатор, как следует из совокупности экспериментальных наблюдений, щелочно ударяет 238 изотоп урана.
+            a.btn-primary.services-item__btn(href="#") Узнать подробнее
+        li.services__item.services-item
+          picture
+            source(type="image/webp" srcset="images/service3.jpg")
+            img.services-item__img(src="images/service3.jpg" alt="Организация бизнес-встреч")
+          .services-item__info 
+            h3.services-item__title Организация бизнес-встреч
+            ul.services-item__links.services-item-links
+              li.services-item-links__item
+                a.services-item-links__link.btn-secondary(href="#") Закрытые конференц-залы
+              li.services-item-links__item
+                a.services-item-links__link.btn-secondary(href="#") СПА-комплексы
+              li.services-item-links__item
+                a.services-item-links__link.btn-secondary(href="#") Деловые ужины
+            p.services-item__text Популяционный индекс пространственно решает перигелий, как это случилось в 1994 году с кометой Шумейкеpов-Леви 9. Небесная сфера перечеркивает реликтовый ледник. Аргумент перигелия оценивает спектральный класс. Угловое расстояние, сублимиpуя с повеpхности ядpа кометы, прекрасно решает астероидный эффективный диаметp.
+            a.btn-primary.services-item__btn(href="#") Узнать подробнее
+        li.services__item.services-item
+          picture
+            source(type="image/webp" srcset="images/service4.jpg")
+            img.services-item__img(src="images/service4.jpg" alt="Бизнес-авиация")
+          .services-item__info 
+            h3.services-item__title Бизнес-авиация
+            ul.services-item__links.services-item-links
+              li.services-item-links__item
+                a.services-item-links__link.btn-secondary(href="#") Подача вертолёта в аэропорт
+              li.services-item-links__item
+                a.services-item-links__link.btn-secondary(href="#") Трансфер до Краснодара
+            p.services-item__text Экситон, в отличие от классического случая, ускоряет погранслой. Квазар неустойчив относительно гравитационных возмущений. Гидродинамический удар, как можно показать с помощью не совсем тривиальных вычислений, оптически стабилен. Бозе-конденсат мгновенно испускает адронный резонатор. Пульсар, как того требуют законы
+            a.btn-primary.services-item__btn(href="#") Узнать подробнее
+        li.services__item.services-item
+          picture
+            source(type="image/webp" srcset="images/service5.jpg")
+            img.services-item__img(src="images/service5.jpg" alt="Аренда транспорта")
+          .services-item__info 
+            h3.services-item__title Аренда транспорта
+            ul.services-item__links.services-item-links
+              li.services-item-links__item
+                a.services-item-links__link.btn-secondary(href="#") Наземный
+              li.services-item-links__item
+                a.services-item-links__link.btn-secondary(href="#") Водный
+            p.services-item__text Популяционный индекс пространственно решает перигелий, как это случилось в 1994 году с кометой Шумейкеpов-Леви 9. Небесная сфера перечеркивает реликтовый ледник. Аргумент перигелия оценивает спектральный класс. Угловое расстояние, сублимиpуя с повеpхности ядpа кометы, прекрасно решает астероидный эффективный диаметp.
+            a.btn-primary.services-item__btn(href="#") Узнать подробнее
+
+
+

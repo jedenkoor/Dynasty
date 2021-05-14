@@ -115,6 +115,10 @@ class Init {
         menuContainer.classList.remove('header-list__level--active')
       }
     })
+
+    window.ap(document).on('click', '.btn-primary', function (e) {
+      _this.actions().btnClick(this, e)
+    })
   }
 
   actions() {
@@ -283,6 +287,15 @@ class Init {
 
         el.classList.toggle('header-list__link--active')
         menu.classList.toggle('header-list__level--active')
+      },
+      btnClick(el, event) {
+        const button = el.getBoundingClientRect()
+        const buttonEffect = el.querySelector('.btn-primary__click')
+        const buttonEffectHtml = `<div class="btn-primary__click" style="top:${event.clientY - 10 - button.y}px; left:${
+          event.clientX - 10 - button.x
+        }px;"></div>`
+        if (buttonEffect) buttonEffect.remove()
+        el.insertAdjacentHTML('afterbegin', buttonEffectHtml)
       }
     }
   }

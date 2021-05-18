@@ -1,0 +1,296 @@
+.service {
+  &-banner {
+    position: relative;
+    height: 440px;
+    @include w767 {
+      height: 232px;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--radial-bg);
+    }
+    &__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &__container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+      padding-bottom: 40px;
+      @include w767 {
+        padding-bottom: 24px;
+      }
+    }
+    &__title {
+      max-width: 1000px;
+      margin-top: auto;
+      margin-bottom: 40px;
+      color: var(--on-sunset-card);
+      @include w767 {
+        margin-bottom: 20px;
+      }
+    }
+    &__btn {
+      padding: 12px 32px;
+      @include w1023 {
+        padding: 8px 24px;
+      }
+      @include w767 {
+        padding: 8px 16px;
+      }
+    }
+  }
+
+  &-level {
+    margin-top: 160px;
+    @include w1023 {
+      margin-top: 96px;
+    }
+    @include w767 {
+      margin-top: 80px;
+    }
+    &__title {
+      margin-bottom: 64px;
+      @include w1023 {
+        margin-bottom: 40px;
+      }
+      @include w767 {
+        margin-bottom: 32px;
+      }
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, calc(33.33% - 26.66px));
+      grid-gap: 64px 40px;
+      padding-left: 0;
+      list-style: none;
+      @include w1023 {
+        transform: translateX(-40px);
+        width: 100vw;
+        display: flex;
+        grid-gap: 0;
+        padding-left: 40px;
+        overflow-x: auto;
+      }
+      @include w767 {
+        transform: none;
+        display: block;
+        width: 100%;
+        padding-left: 0;
+      }
+      &:after {
+        @include w1023 {
+          content: '';
+          flex: 0 0 40px;
+        }
+        @include w767 {
+          display: none;
+        }
+      }
+    }
+    &__item {
+      box-shadow: 1px 10px 48px rgba(20, 25, 31, 0.08);
+      background-color: var(--card-surface);
+      border-radius: 8px;
+      overflow: hidden;
+      @include w1023 {
+        min-width: 312px;
+      }
+      @include w767 {
+        min-width: auto;
+      }
+      &:not(:last-child) {
+        @include w1023 {
+          margin-right: 24px;
+        }
+        @include w767 {
+          margin-right: 0;
+          margin-bottom: 24px;
+        }
+      }
+    }
+    &-item {
+      &__link {
+        &:hover .service-level-item__title,
+        &:focus .service-level-item__title {
+          text-decoration: underline;
+        }
+      }
+      &__img {
+        width: 100%;
+        height: 309px;
+        object-fit: cover;
+        @include w1023 {
+          height: 218px;
+        }
+      }
+      &__title {
+        margin: 0;
+        padding: 24px;
+        font-family: 'Noto Serif';
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 28px;
+        @include w1023 {
+          font-size: 19px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+
+  &-seo {
+    &__title {
+      margin-bottom: 49px;
+      @include w1023 {
+        margin-bottom: 41px;
+      }
+      @include w767 {
+        margin-bottom: 33px;
+        letter-spacing: 0;
+      }
+    }
+    &__content {
+      display: grid;
+      grid-template-columns: auto 413px;
+      grid-gap: 11%;
+      @include w1200 {
+        grid-template-columns: auto 350px;
+        grid-gap: 8%;
+      }
+      @include w1023 {
+        grid-template-columns: auto;
+        grid-gap: 56px;
+      }
+      @include w767 {
+        grid-gap: 40px;
+      }
+    }
+    &__text {
+      font-size: 20px;
+      line-height: 28px;
+      letter-spacing: 0.01em;
+      @include w767 {
+        font-size: 17px;
+        line-height: 24px;
+      }
+      p {
+        margin-bottom: 28px;
+        @include w767 {
+          margin-bottom: 24px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &-aside {
+      &__block {
+        position: sticky;
+        top: 90px;
+        padding: 40px;
+        background: var(--sunset-card);
+        border-radius: 8px;
+        color: var(--on-sunset-card);
+        @include w1023 {
+          display: grid;
+          grid-template-columns: repeat(2, calc(50% - 12px));
+          grid-gap: 28px 24px;
+          padding: 24px;
+        }
+        @include w767 {
+          grid-template-columns: auto;
+          grid-gap: 24px;
+        }
+      }
+      &__text {
+        margin-bottom: 60px;
+        font-size: 20px;
+        line-height: 28px;
+        @include w1023 {
+          grid-row: 1 / 3;
+          max-width: 270px;
+          margin-bottom: 0;
+          font-size: 17px;
+          line-height: 24px;
+        }
+        @include w767 {
+          margin-bottom: 16px;
+        }
+      }
+      &__link {
+        display: block;
+        margin-bottom: 40px;
+        font-family: 'Noto Serif';
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: 0.01em;
+        @include w1023 {
+          margin-bottom: 0;
+        }
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+      &__btn {
+        padding: 12px 32px;
+        @include w1023 {
+          width: 100%;
+          padding: 8px 0;
+        }
+      }
+    }
+  }
+
+  &-gallery {
+    overflow: hidden;
+    &__title {
+      margin-bottom: 64px;
+      @include w1023 {
+        margin-bottom: 40px;
+      }
+      @include w767 {
+        margin-bottom: 32px;
+      }
+    }
+    &__slider {
+      overflow: visible;
+    }
+    &-slider {
+      &__wrapper {
+        padding-left: 0;
+        list-style: none;
+      }
+      &__slide {
+        height: 396px;
+        width: auto;
+        @include w1023 {
+          height: 234px;
+        }
+        @include w767 {
+          height: 196px;
+        }
+      }
+      &__img {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

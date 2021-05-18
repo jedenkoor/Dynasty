@@ -1,3 +1,4 @@
+.overlay
 header.header 
   .container.header__container
     a.header__logo(href="/") 
@@ -8,54 +9,80 @@ header.header
         <use xlink:href="#logo-fill"></use>
       </svg>
 
+    .header__wrap
+      nav.header__menu 
+        ul.header__list.header-list
+          li.header-list__item 
+            button.header-list__link.btn-secondary Услуги
+            .header-list__level.header-list-level
+              .container.header-list-level__container
+                .header-list-level__col
+                  .header-list-level__item.header-list-level__item--active
+                    a.header-list-level__title(href="#") Организация отдыха
+                    button.header-list-level__arr
+                      <svg>
+                        <use xlink:href="#menu-arr"></use>
+                      </svg>
+                  ul.header-list-level__list
+                    li.header-list-level__item
+                      a.header-list-level__link(href="#") Индивидуальный
+                    li.header-list-level__item
+                      a.header-list-level__link(href="#") Семейный
+                    li.header-list-level__item
+                      a.header-list-level__link(href="#") Корпоративный
+                .header-list-level__col
+                  .header-list-level__item
+                    a.header-list-level__title(href="#") Казино выходного дня
+                .header-list-level__col
+                  .header-list-level__item
+                    a.header-list-level__title(href="#") Организация бизнес-встреч
+                    button.header-list-level__arr
+                      <svg>
+                        <use xlink:href="#menu-arr"></use>
+                      </svg>
+                  ul.header-list-level__list
+                    li.header-list-level__item
+                      a.header-list-level__link(href="#") Закрытые конференц-залы
+                    li.header-list-level__item
+                      a.header-list-level__link(href="#") СПА-комплексы
+                    li.header-list-level__item
+                      a.header-list-level__link(href="#") Деловые ужины
+                .header-list-level__col
+                  .header-list-level__item
+                    a.header-list-level__title(href="#") Бизнес-авиация
+                    button.header-list-level__arr
+                      <svg>
+                        <use xlink:href="#menu-arr"></use>
+                      </svg>
+                  ul.header-list-level__list
+                    li.header-list-level__item
+                      a.header-list-level__link(href="#") Подача вертолёта в аэропорт
+                    li.header-list-level__item
+                      a.header-list-level__link(href="#") Трансфер до Краснодара
+                .header-list-level__col
+                  .header-list-level__item
+                    a.header-list-level__title(href="#") Аренда транспорта
+                    button.header-list-level__arr
+                      <svg>
+                        <use xlink:href="#menu-arr"></use>
+                      </svg>
+                  ul.header-list-level__list
+                    li.header-list-level__item
+                      a.header-list-level__link(href="#") Наземный
+                    li.header-list-level__item
+                      a.header-list-level__link(href="#") Водный
 
-    nav.header__menu 
-      ul.header__list.header-list
-        li.header-list__item 
-          button.header-list__link.btn-secondary Услуги
-          .header-list__level.header-list-level
-            .container.header-list-level__container
-              ul.header-list-level__col
-                li.header-list-level__item.header-list-level__item--active
-                  a.header-list-level__title(href="#") Организация отдыха
-                li.header-list-level__item
-                  a.header-list-level__link(href="#") Индивидуальный
-                li.header-list-level__item
-                  a.header-list-level__link(href="#") Семейный
-                li.header-list-level__item
-                  a.header-list-level__link(href="#") Корпоративный
-              ul.header-list-level__col
-                li.header-list-level__item
-                  a.header-list-level__title(href="#") Казино выходного дня
-              ul.header-list-level__col
-                li.header-list-level__item
-                  a.header-list-level__title(href="#") Организация бизнес-встреч
-                li.header-list-level__item
-                  a.header-list-level__link(href="#") Закрытые конференц-залы
-                li.header-list-level__item
-                  a.header-list-level__link(href="#") СПА-комплексы
-                li.header-list-level__item
-                  a.header-list-level__link(href="#") Деловые ужины
-              ul.header-list-level__col
-                li.header-list-level__item
-                  a.header-list-level__title(href="#") Бизнес-авиация
-                li.header-list-level__item
-                  a.header-list-level__link(href="#") Подача вертолёта в аэропорт
-                li.header-list-level__item
-                  a.header-list-level__link(href="#") Трансфер до Краснодара
-              ul.header-list-level__col
-                li.header-list-level__item
-                  a.header-list-level__title(href="#") Аренда транспорта
-                li.header-list-level__item
-                  a.header-list-level__link(href="#") Наземный
-                li.header-list-level__item
-                  a.header-list-level__link(href="#") Водный
-
-        li.header-list__item 
-          a.header-list__link(href="#") Контакты
-    .header__info
-      a.header__lang.btn-secondary(href="#")  English 
-      button.header__btn.btn-primary Забронировать поездку
-      button.header__theme.header-theme
-        span.header-theme__sun 
-        span.header-theme__moon
+          li.header-list__item 
+            a.header-list__link(href="/main.html#contacts") Контакты
+      .header__info
+        a.header__lang.btn-secondary(href="#") English 
+        button.header__btn.btn-primary.popup-btn(data-popup="callback") Забронировать поездку
+    button.header__theme.header-theme
+      span.header-theme__sun 
+      span.header-theme__moon
+    button.header__burger
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 20L29 20" stroke="#F9FAFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 14H29" stroke="#F9FAFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 26H29" stroke="#F9FAFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>

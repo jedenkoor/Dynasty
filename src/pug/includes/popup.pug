@@ -1,0 +1,25 @@
+form.popup.popup--callback(action="#" data-popup="callback") 
+  button.popup__close 
+    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.3637 5.63623L11.9997 12.0002M11.9997 12.0002L5.63574 18.3642M11.9997 12.0002L18.3637 18.3642M11.9997 12.0002L5.63574 5.63623"/>
+    </svg>
+  .popup__content
+    h4.popup__title Ваша заявка успешно отправлена. Ожидайте звонка специалиста!
+    h4.popup__title Произошла ошибка, попробуйте позже.
+    h4.popup__title Оставьте заявку, и мы поможем вам спланировать поездку
+    .input-block
+      input(type="text" placeholder=" ")
+      span Ваше имя
+    .input-block
+      input(type="tel" placeholder=" " data-type="tel")
+      span Телефон 
+        span.required *
+    .input-block
+      input(type="email" placeholder=" " data-type="email")
+      span E-mail
+    .input-block
+      textarea(placeholder="Комментарий к заявке")
+    .form__bot 
+      button.btn-primary.form__btn(type="submit") Отправить заявку
+      p.form__text Нажимая на кнопку, вы соглашаетесь с 
+        a(href="#") политикой конфиденциальности

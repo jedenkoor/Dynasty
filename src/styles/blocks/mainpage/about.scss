@@ -9,6 +9,16 @@
     margin-bottom: 81px;
     padding-left: 0;
     list-style: none;
+    @include w1200 {
+      grid-gap: 24px;
+      margin-bottom: 79px;
+    }
+    @include w767 {
+      grid-template-columns: auto;
+      grid-gap: 16px;
+      margin-top: -36px;
+      margin-bottom: 64px;
+    }
   }
   &-cards {
     &__item {
@@ -18,15 +28,42 @@
       background: var(--card-surface);
       box-shadow: 1px 5px 14px rgba(20, 25, 31, 0.06);
       border-radius: 4px;
+      @include w1023 {
+        display: block;
+        padding: 16px;
+        border-radius: 8px;
+      }
+      @include w767 {
+        display: flex;
+      }
     }
     &__icon {
+      flex-shrink: 0;
       width: 48px;
       height: 48px;
       margin-right: 20px;
       fill: url(#about-cards-grad-dark);
+      @include w1023 {
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+      @include w767 {
+        width: 40px;
+        height: 40px;
+        margin-right: 16px;
+        margin-bottom: 0;
+      }
     }
     &__text {
       max-width: 245px;
+      @include w1023 {
+        font-size: 17px;
+        line-height: 24px;
+      }
+      @include w767 {
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
   }
   &__text {
@@ -36,6 +73,16 @@
     font-size: 35px;
     line-height: 40px;
     letter-spacing: 0.01em;
+    @include w1023 {
+      margin-bottom: 33px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+    @include w767 {
+      margin-bottom: 21px;
+      font-size: 19px;
+      line-height: 24px;
+    }
   }
   &__cols {
     display: grid;
@@ -43,9 +90,24 @@
     grid-gap: 37px;
     padding-left: 0;
     list-style: none;
+    @include w1023 {
+      grid-template-columns: auto;
+      grid-gap: 24px;
+    }
+    @include w767 {
+      grid-gap: 16px;
+    }
   }
   &__col {
     text-indent: 54px;
+    @include w1200 {
+      text-indent: 24px;
+    }
+    @include w1023 {
+      font-size: 17px;
+      line-height: 24px;
+      letter-spacing: 0.01em;
+    }
   }
 }
 

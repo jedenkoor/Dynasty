@@ -1,0 +1,80 @@
+.popup {
+  position: fixed;
+  z-index: 50;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 631px;
+  background-color: var(--card-surface);
+  box-shadow: 1px 10px 48px rgba(20, 25, 31, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  @media screen and (min-width: 1200px) {
+    ::-webkit-scrollbar-track {
+      background: var(--card-surface);
+    }
+  }
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s linear, opacity 0.2s linear;
+  }
+  &__close {
+    position: fixed;
+    z-index: 2;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    &:hover path,
+    &:focus path {
+      stroke: var(--secondary-accent);
+    }
+    path {
+      stroke: var(--main-on-card-surface);
+    }
+  }
+  &__content {
+    max-height: 95vh;
+    padding: 48px 64px;
+    overflow-y: auto;
+    @include w1023 {
+      max-height: 80vh;
+    }
+    @include w1023 {
+      padding: 48px;
+    }
+    @include w767 {
+      padding: 40px 24px;
+    }
+  }
+  &__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-family: 'Noto Serif';
+    font-weight: normal;
+    font-size: 29px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    @include w1023 {
+      margin-bottom: 32px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+    @include w767 {
+      margin-bottom: 24px;
+      font-size: 21px;
+      line-height: 26px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

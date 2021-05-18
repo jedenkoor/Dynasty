@@ -2,7 +2,7 @@ extends ../template
 
 block variables
   - var title = 'Главная'
-  -var form = 1
+  - var form = 1
 
 block content
   section.banner(style="background-color: #296692;")
@@ -12,7 +12,7 @@ block content
     .container.banner__container
       p.banner__text Добро пожаловать в Сочи
       h1.h1title.banner__title Консьерж-сервис аренды транспорта, организации отдыха и деловых встреч 
-      button.btn-primary.banner__btn Поехать в отпуск
+      button.btn-primary.banner__btn.popup-btn(data-popup="callback") Поехать в отпуск
 
   section.about.margin-section
     .container
@@ -38,7 +38,7 @@ block content
         li.about__col
           p Курорты Абхазии подкупают не только безупречно чистым морем, напоенным хвойными и другими тропическими ароматами воздухом, но и бесконечным радушием местных жителей и их желанием поделиться самым лучшим с гостями. Здесь вы действительно будете чувствовать себя больше гостем, чем туристом, независимо от того, едете ли в горы, отдыхаете на пляже или приходите за покупками на местный рынок.
 
-  section.services.margin-section
+  section.services#services.margin-section
     .container
       h2.h2title.services__title Наши услуги
       ul.services__list 

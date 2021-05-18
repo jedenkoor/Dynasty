@@ -4,22 +4,70 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include w1200 {
+      align-items: flex-start;
+    }
+    @include w767 {
+      display: block;
+    }
   }
   .header__logo {
     margin-right: 0;
+    @include w767 {
+      margin-bottom: 20px;
+    }
+  }
+  &__menu {
+    flex: 1;
+    @include w1200 {
+      flex: 0 0 65.4%;
+      padding-top: 12px;
+    }
   }
   &__list {
     display: flex;
     padding-left: 0;
     list-style: none;
+    @include w1200 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 12px 24px;
+    }
   }
   &-list {
     &__item {
       &:not(:last-child) {
         margin-right: 56px;
+        @include w1200 {
+          margin-right: 0;
+        }
+      }
+      &:first-child {
+        margin-left: auto;
+        @include w1200 {
+          margin-left: 0;
+        }
+      }
+      &:last-child {
+        margin-left: auto;
+        @include w1200 {
+          margin-left: 0;
+        }
+      }
+      &:nth-child(3) {
+        margin-right: 0;
       }
     }
     &__link {
+      @include w1200 {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      @include w767 {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.02em;
+      }
       &:hover,
       &:focus {
         text-decoration: underline;
@@ -29,5 +77,14 @@
   &__copy {
     margin: 0;
     color: var(--caption-on-grey-surface);
+    @include w1200 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    @include w767 {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+    }
   }
 }

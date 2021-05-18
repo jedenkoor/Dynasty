@@ -1,6 +1,12 @@
 .services {
   &__title {
     margin-bottom: 63px;
+    @include w1023 {
+      margin-bottom: 39px;
+    }
+    @include w767 {
+      margin-bottom: 31px;
+    }
   }
   &__list {
     padding-left: 0;
@@ -14,26 +20,61 @@
     box-shadow: 1px 10px 48px rgba(20, 25, 31, 0.08);
     border-radius: 8px;
     overflow: hidden;
+    @include w1023 {
+      display: block;
+      grid-gap: 0;
+    }
     &:not(:last-child) {
       margin-bottom: 64px;
+      @include w1023 {
+        margin-bottom: 40px;
+      }
     }
     &:nth-child(2n) {
       .services-item__info {
         order: -1;
         padding: 40px 64px;
+        @include w1200 {
+          padding: 40px 0 40px 40px;
+        }
+        @include w1023 {
+          order: initial;
+          padding: 32px;
+        }
+        @include w767 {
+          padding: 16px;
+        }
       }
     }
   }
   &-item {
     &__img {
-      height: 479px;
+      width: 100%;
+      height: 100%;
+      min-height: 479px;
       object-fit: cover;
+      @include w1023 {
+        height: 380px;
+        min-height: auto;
+      }
+      @include w767 {
+        height: 232px;
+      }
     }
     &__info {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       padding: 40px 24px;
+      @include w1200 {
+        padding: 40px 0;
+      }
+      @include w1023 {
+        padding: 32px;
+      }
+      @include w767 {
+        padding: 16px;
+      }
     }
     &__title {
       margin-top: 0;
@@ -43,6 +84,11 @@
       font-size: 29px;
       line-height: 32px;
       letter-spacing: 0.01em;
+      @include w767 {
+        margin-bottom: 16px;
+        font-size: 24px;
+        line-height: 28px;
+      }
     }
     &__links {
       display: flex;
@@ -50,6 +96,20 @@
       margin-bottom: 9px;
       padding-left: 0;
       list-style: none;
+      @include w767 {
+        flex-wrap: nowrap;
+        transform: translateX(-16px);
+        width: calc(100% + 32px);
+        margin-bottom: 0;
+        padding-left: 16px;
+        overflow-x: scroll;
+      }
+      &:after {
+        @include w767 {
+          content: '';
+          flex: 0 0 16px;
+        }
+      }
     }
     &-links {
       &__item {
@@ -63,6 +123,7 @@
         padding: 5px 11.3px;
         font-size: 14px;
         line-height: 20px;
+        white-space: nowrap;
       }
     }
     &__text {
@@ -71,10 +132,25 @@
       -webkit-line-clamp: 8;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      @include w1023 {
+        max-width: none;
+        margin-bottom: 24px;
+        font-size: 17px;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+      }
+      @include w767 {
+        display: block;
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
     &__btn {
       margin-top: auto;
       padding: 12px 33px;
+      @include w1023 {
+        padding: 8px 24px;
+      }
     }
   }
 }

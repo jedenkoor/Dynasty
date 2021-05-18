@@ -1,11 +1,33 @@
-.header {
+.overlay {
   position: fixed;
+  z-index: 40;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 200vh;
+  background-color: $text-on-button;
+  opacity: 0;
+  visibility: hidden;
+  &--active {
+    opacity: 0.8;
+    visibility: visible;
+    transition: visibility 0s linear, opacity 0.2s linear;
+  }
+}
+.header {
+  position: sticky;
   z-index: 20;
   top: 0;
   left: 0;
   width: 100%;
   padding: 16px 0;
   backdrop-filter: blur(13px);
+  @include w1200 {
+    padding: 20px 0;
+  }
+  @include w767 {
+    padding: 12px 0;
+  }
   &--blur {
     &:before {
       border-bottom: 1px solid var(--border);
@@ -30,6 +52,12 @@
     display: flex;
     height: 48px;
     margin-right: 7.3%;
+    @include w1200 {
+      margin-right: auto;
+    }
+    @include w1023 {
+      height: 40px;
+    }
     &:hover .logo-fill,
     &:focus .logo-fill {
       fill: var(--logo-hover);
@@ -47,16 +75,84 @@
       }
     }
   }
+  &__wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    @include w1200 {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      flex-wrap: wrap;
+      padding: 32px 40px;
+      background: var(--header-surface);
+      box-shadow: var(--menu-shadow);
+      border-radius: 0px 0px 8px 8px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-16px);
+      transition: opacity 0.3s, transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), visibility 0s 0.3s;
+    }
+    @include w767 {
+      padding: 0;
+      transform: translateY(-12px);
+      -ms-scroll-chaining: none;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+    &--active {
+      @include w1200 {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: opacity 0.3s, transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), visibility 0s 0s;
+      }
+    }
+  }
+  &__menu {
+    @include w1200 {
+      width: 100%;
+    }
+    @include w767 {
+      padding: 24px;
+      padding-bottom: 88px;
+      height: calc(100vh - 63px);
+      height: calc((var(--vh, 1vh) * 100) - 63px);
+      overflow-y: auto;
+    }
+  }
   &__list {
     display: flex;
     align-items: center;
     padding-left: 0;
     list-style: none;
+    @include w1200 {
+      width: 100%;
+    }
+    @include w767 {
+      display: block;
+    }
   }
   &-list {
     &__item {
       &:not(:last-child) {
         margin-right: 40px;
+        @include w1200 {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
+      &:last-child {
+        @include w1200 {
+          position: absolute;
+          bottom: 40px;
+          left: 40px;
+        }
+        @include w767 {
+          position: static;
+          font-size: 17px;
+          line-height: 24px;
+        }
       }
     }
     &__link {
@@ -68,6 +164,9 @@
       }
       &.btn-secondary {
         padding: 7px 23px;
+        @include w1200 {
+          display: none;
+        }
       }
       &--active {
         border-color: var(--secondary-accent);
@@ -82,11 +181,26 @@
       box-shadow: var(--menu-shadow);
       border-radius: 0px 0px 8px 8px;
       background: var(--header-surface);
-      padding: 32px 40px;
+      padding: 32px 0;
       opacity: 0;
       visibility: hidden;
       transform: translateY(-16px);
       transition: opacity 0.3s, transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), visibility 0s 0.3s;
+      @include w1200 {
+        position: static;
+        width: 100%;
+        margin-bottom: 68px;
+        padding: 0;
+        transform: none;
+        opacity: 1;
+        visibility: inherit;
+        background: none;
+        box-shadow: none;
+        transition: none;
+      }
+      @include w767 {
+        margin-bottom: 20px;
+      }
       &--active {
         opacity: 1;
         visibility: visible;
@@ -98,21 +212,104 @@
       &__container {
         display: flex;
         justify-content: space-between;
+        @include w1200 {
+          position: relative;
+          display: block;
+          padding: 0px;
+        }
       }
       &__col {
         padding-left: 0;
         list-style: none;
+        @include w1200 {
+          position: relative;
+          margin-bottom: 20px;
+        }
+        > .header-list-level__item {
+          @include w1200 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: calc(50% - 20px);
+          }
+          @include w767 {
+            width: 100%;
+          }
+        }
+        &--active {
+          .header-list-level__arr {
+            transform: scale(-1);
+            @include w767 {
+              transform: rotate(90deg) scale(-1);
+            }
+            svg {
+              stroke: var(--secondary-accent);
+            }
+          }
+          .header-list-level__list {
+            display: block;
+          }
+        }
+      }
+      &__list {
+        padding-left: 0;
+        list-style: none;
+        @include w1200 {
+          position: absolute;
+          right: 0;
+          top: 0;
+          display: none;
+          width: calc(50% - 20px);
+        }
+        @include w767 {
+          position: static;
+          width: 100%;
+          margin-top: 16px;
+        }
+        .header-list-level__item {
+          @include w1200 {
+            margin-bottom: 16px !important;
+          }
+        }
       }
       &__item {
         &:not(:last-child) {
           margin-bottom: 16px;
+          @include w1200 {
+            margin-bottom: 0;
+          }
         }
         &--active {
           font-weight: 600;
         }
       }
+      &__arr {
+        display: none;
+        width: 24px;
+        flex: 0 0 24px;
+        height: 24px;
+        padding: 0;
+        cursor: pointer;
+        border: none;
+        background: none;
+        @include w1200 {
+          display: flex;
+        }
+        @include w767 {
+          transform: rotate(90deg);
+        }
+        svg {
+          width: 100%;
+          height: 100%;
+          stroke: var(--main-on-card-surface);
+        }
+      }
       &__title {
         color: var(--secondary-accent);
+        @include w767 {
+          font-size: 17px;
+          line-height: 24px;
+        }
         &:hover,
         &:focus {
           text-decoration: underline;
@@ -124,6 +321,9 @@
         font-size: 14px;
         line-height: 20px;
         color: var(--secondary-buttons);
+        @include w767 {
+          max-width: none;
+        }
         &:hover,
         &:focus {
           text-decoration: underline;
@@ -135,29 +335,58 @@
     display: flex;
     align-items: center;
     margin-left: auto;
+    @include w767 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 24px;
+      padding-top: 0;
+      background: var(--header-surface);
+    }
   }
   &__lang {
     margin-right: 40px;
     padding: 5px 11px;
     font-size: 14px;
     line-height: 20px;
+    @include w1200 {
+      margin-right: 24px;
+    }
   }
   &__btn {
     padding: 12px 32px;
     white-space: nowrap;
+    @include w1200 {
+      padding: 8px 63px;
+    }
+    @include w767 {
+      flex: 1;
+      padding: 10px 0;
+    }
   }
   &__theme {
     position: relative;
-    margin-left: 40px;
     flex: 0 0 22px;
+    display: block;
     width: 22px;
     height: 14px;
+    margin-left: 40px;
+    padding: 0;
     border-radius: 30px;
     background-color: var(--main-on-card-surface);
     border: none;
     cursor: pointer;
     overflow: hidden;
     transition: 0.3s;
+    @include w1200 {
+      display: none;
+    }
+    &--active {
+      @include w1200 {
+        display: flex;
+      }
+    }
     &:hover,
     &:focus {
       background-color: var(--link-on-hover);
@@ -186,6 +415,45 @@
       border-radius: 30px;
       background-color: var(--main-on-card-surface);
       transition: 0.3s;
+    }
+  }
+  &__burger {
+    display: none;
+    margin-left: 40px;
+    padding: 0;
+    background: none;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    @include w1200 {
+      display: flex;
+    }
+    @include w767 {
+      margin-left: 24px;
+    }
+    &--active {
+      box-shadow: 1px 5px 22px rgba(20, 25, 31, 0.08);
+      background: var(--card-surface);
+      path {
+        &:nth-child(1) {
+          transform: translateX(10px);
+          opacity: 0;
+        }
+        &:nth-child(2) {
+          transform: translate(15.9px, -3.6px) rotate(45deg);
+        }
+        &:nth-child(3) {
+          transform: translate(-12.7px, 16px) rotate(-45deg);
+        }
+      }
+    }
+    path {
+      transition: 0.2s;
+      stroke: var(--main-on-card-surface);
+    }
+    &:hover path,
+    &:focus path {
+      stroke: var(--secondary-accent);
     }
   }
 }

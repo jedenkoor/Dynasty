@@ -1,0 +1,74 @@
+extends ../template
+
+block variables
+  - var title = 'Карточка услуг'
+  - var breadcrumbs = 1
+  - var form = 1
+
+block content
+  section.service-banner(style="background-color: #296692;")
+    picture
+      source(type="image/webp" srcset="images/service-page1.jpg")
+      img.service-banner__img(src="images/service-page1.jpg" alt="Организация отдыха")
+    .container.service-banner__container
+      h1.h1title.service-banner__title Организация отдыха
+      button.btn-primary.service-banner__btn.popup-btn(data-popup="callback") Заказать услугу
+
+  section.service-level.margin-section
+    .container 
+      h2.h2title.service-level__title Услуги по направлению
+      ul.service-level__list
+        li.service-level__item.service-level-item
+          a.service-level-item__link(href="#") 
+            picture
+              source(type="image/webp" srcset="images/service1.jpg")
+              img.service-level-item__img(src="images/service1.jpg" alt="Индивидуальный")
+            h3.service-level-item__title Индивидуальный
+        li.service-level__item.service-level-item
+          a.service-level-item__link(href="#") 
+            picture
+              source(type="image/webp" srcset="images/service2.jpg")
+              img.service-level-item__img(src="images/service2.jpg" alt="Семейный")
+            h3.service-level-item__title Семейный
+        li.service-level__item.service-level-item
+          a.service-level-item__link(href="#") 
+            picture
+              source(type="image/webp" srcset="images/service3.jpg")
+              img.service-level-item__img(src="images/service3.jpg" alt="Корпоративный")
+            h3.service-level-item__title Корпоративный
+
+  section.service-seo.margin-section
+    .container 
+      h2.h2title.service-seo__title Организация отдыха
+      .service-seo__content 
+        .service-seo__text 
+          p Вы наверное уже интересовались, как обеспеченные туристы планируют свой отпуск. Ответ простой: они пользуются услугами консьерж-сервиса класса люкс. Эта категория потребителей состоит из обеспеченной части населения и сверхбогатых людей, имеющих ограниченное время и большие суммы денег, которые они готовы тратить. Классический отпуск заменяется отдыхом по системе "все включено", а типовые требования варьируются с возможностью  предоставления дорогостоящих  услуг.
+          p Kонсьерж-сервис класса люкс планирует эксклюзивный отдых с учетом индивидуальных потребностей клиента, внимательно выслушивая требования и проявляя заботу о каждом. Слово «консьерж» происходит от французской фразы «comte des cierges» и означает  человека, который в средневековые времена зажигал свечи и поддерживал их горение в течение важных событий.
+          p В средние века это словосочетание также описывало человека, который отвечал за хранение ключей. В настоящее время консьерж-сервис - это туристическое агентство класса люкс, которое предоставляет услуги в течение полного рабочего дня на конкретной территории, в конкретной стране или в глобальном масштабе.
+        .service-seo__aside.service-seo-aside 
+          .service-seo-aside__block 
+            p.service-seo-aside__text Получить консультацию о работе нашего сервиса и спланировать отдых вы можете по телефону
+            a.service-seo-aside__link(href="tel:88124072121") +7 (812) 407-21-21
+            button.btn-primary.service-seo-aside__btn.popup-btn(data-popup="callback") Связаться с нами
+
+  section.service-gallery.margin-section
+    .container 
+      h2.h2title.service-gallery__title Фото и видео с корпоративного отдыха
+      .service-gallery__slider.service-gallery-slider.swiper-container
+        ul.service-gallery-slider__wrapper.swiper-wrapper
+          li.service-gallery-slider__slide.swiper-slide 
+            picture
+              source(type="image/webp" srcset="images/service-gallery1.png")
+              img.service-gallery-slider__img(src="images/service-gallery1.png" alt="Фото и видео с корпоративного отдыха")
+          li.service-gallery-slider__slide.swiper-slide 
+            picture
+              video.service-gallery-slider__img(muted="" autoplay="autoplay" loop="loop" controls="" playsinline="")
+                source(src="images/service-gallery3.mp4")
+          li.service-gallery-slider__slide.swiper-slide 
+            picture
+              source(type="image/webp" srcset="images/service-gallery2.png")
+              img.service-gallery-slider__img(src="images/service-gallery2.png" alt="Фото и видео с корпоративного отдыха")
+          li.service-gallery-slider__slide.swiper-slide 
+            picture
+              source(type="image/webp" srcset="images/service-gallery1.png")
+              img.service-gallery-slider__img(src="images/service-gallery1.png" alt="Фото и видео с корпоративного отдыха")

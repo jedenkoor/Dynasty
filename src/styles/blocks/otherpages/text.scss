@@ -1,0 +1,40 @@
+.text {
+  padding-top: 124px;
+  @include w1023 {
+    padding-top: 100px;
+  }
+  @include w767 {
+    padding-top: 72px;
+  }
+  &__title {
+    margin-bottom: 48px;
+    @include w1023 {
+      margin-bottom: 40px;
+      font-size: 51px;
+      line-height: 56px;
+    }
+    @include w767 {
+      margin-bottom: 32px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+  &__subtitle {
+    margin-top: 0;
+    margin-bottom: 13px;
+    font-family: 'Noto Serif';
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    @include w1023 {
+      font-size: 19px;
+      line-height: 24px;
+    }
+  }
+  p {
+    max-width: 867px;
+    & + .text__subtitle {
+      margin-top: 23px;
+    }
+  }
+}

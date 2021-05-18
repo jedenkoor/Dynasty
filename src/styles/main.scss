@@ -105,9 +105,6 @@ img::-moz-selection {
 
 html.fixed {
   overflow: hidden;
-  body {
-    overflow: hidden;
-  }
 }
 
 html.compensate-for-scrollbar {
@@ -136,6 +133,10 @@ body {
   transition: opacity 0.2s;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: antialiased;
+  @include w1023 {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 .wrapper {
@@ -147,7 +148,6 @@ body {
 
 .content {
   flex: 1;
-  padding-top: 80px;
 }
 
 .container {
@@ -245,6 +245,10 @@ input[type='number'] {
   cursor: pointer;
   transition: background 0.2s;
   overflow: hidden;
+  @include w767 {
+    font-size: 14px;
+    line-height: 20px;
+  }
   &:hover,
   &:focus {
     background: var(--primary-hover);
@@ -284,6 +288,10 @@ input[type='number'] {
   letter-spacing: 0.01em;
   cursor: pointer;
   transition: color 0.2s, border-color 0.2s;
+  @include w767 {
+    font-size: 14px;
+    line-height: 20px;
+  }
   &:hover,
   &:focus {
     border-color: var(--secondary-accent);
@@ -333,6 +341,9 @@ input[type='number'] {
   display: block;
   &:not(:last-child) {
     margin-bottom: 20px;
+    @include w767 {
+      margin-bottom: 16px;
+    }
   }
   > span {
     position: absolute;
@@ -359,7 +370,7 @@ input[type='number'] {
     line-height: 20px;
     color: var(--secondary-buttons);
     letter-spacing: 0.01em;
-    transition: 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
     &:not(:placeholder-shown) + span,
     &:focus + span {
       top: 5px;
@@ -380,7 +391,7 @@ input[type='number'] {
     line-height: 20px;
     color: var(--secondary-buttons);
     letter-spacing: 0.01em;
-    transition: 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
     &::placeholder {
       color: var(--caption-on-grey-surface);
     }
@@ -428,6 +439,7 @@ textarea {
 @import 'blocks/common/footer';
 @import 'blocks/common/form';
 @import 'blocks/common/popup';
+@import 'blocks/common/cookie';
 @import 'blocks/mainpage/banner';
 @import 'blocks/mainpage/about';
 @import 'blocks/mainpage/services';

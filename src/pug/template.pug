@@ -24,12 +24,16 @@ html(lang="ru")
 
   body(style="opacity: 0")
     .wrapper
-      include includes/sprite-svg.pug
-      include includes/header.pug
-      if(breadrumbs == 1)
-        include includes/breadrumbs.pug
+      if(notfound != 1)
+        include includes/sprite-svg.pug
+        include includes/header.pug
+      if(breadcrumbs == 1)
+        include includes/breadcrumbs.pug
       main.content
         block content
         if(form == 1)
           include includes/form.pug
-      include includes/footer.pug
+      if(notfound != 1)
+        include includes/popup.pug
+        include includes/cookie.pug
+        include includes/footer.pug

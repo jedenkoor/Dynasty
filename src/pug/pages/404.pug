@@ -1,0 +1,13 @@
+extends ../template
+
+block variables
+  - var title = '404'
+  - var notfound = '1'
+
+block content
+  section.notfound
+    .container.notfound__container
+      h1.h1title.notfound__title Страница не&nbsp;найдена
+      p.notfound__text Страница, которую вы искали, удалена или перенесена в другое место
+      .notfound__btns
+        a.notfound__btn.btn-primary(href="#") Вернуться на главную
